@@ -52,7 +52,22 @@ Execute os testes em modo headless (sem interface gráfica) e gere relatórios a
    npm run cypress:run
    ```
 ---
+## 🤖 Execução no CI/CD
+Os testes do Cypress são automaticamente executados pelo **GitHub Actions** nos seguintes cenários:
+- **Pull Requests** abertos.
+- **Commits** enviados para qualquer branch.
+- Agendamento diário de segunda a sexta-feira às 8:00 (UTC).
 
+### 📋 Workflow do GitHub Actions
+O workflow está definido no arquivo , com as seguintes etapas: `.github/workflows/cypress-ci.yml`
+1. Clonar o repositório principal.
+2. Instalar as dependências do projeto.
+3. Executar os testes do Cypress em múltiplos navegadores.
+4. Publicar relatórios no **GitHub Pages**.
+
+Os relatórios gerados estão disponíveis em:
+👉 **[Link para os relatórios no GitHub Pages](https://lari-bs.github.io/bugbank-casas-bahia/)**.
+---
 ## 📊 Relatórios de Testes
 
 Após a execução dos testes no modo headless, os relatórios serão gerados automaticamente em:
@@ -82,6 +97,8 @@ Após a execução dos testes no modo headless, os relatórios serão gerados au
 - [Cypress](https://www.cypress.io/) 🌲
 - [Day.js](https://day.js.org/) 📆 (Para o controle de datas nos relatórios)
 - [Mochawesome](https://www.npmjs.com/package/cypress-mochawesome-reporter) 📝 (Geração de relatórios incríveis!)
+- [GitHub Actions](https://github.com/features/actions) ⚙️ (Execução de testes automatizados no CI/CD)
+- [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 🌐 (Publicação de relatórios no GitHub Pages)
 
 ---
 
