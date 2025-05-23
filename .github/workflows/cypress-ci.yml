@@ -15,19 +15,10 @@ on:
         description: 'Escolha o navegador'
         required: true
         default: 'electron'
-        options:
-          - electron
-          - chrome
-          - firefox
       tags:
         description: 'Escolha as tags para os testes Cypress'
         required: false
         default: '@all'
-        options:
-          - '@all'
-          - '@login'
-          - '@transfer'
-          - '@withdraw'
 
 jobs:
   cypress-run:
@@ -69,8 +60,8 @@ jobs:
 
       - name: 🧪 Run Cypress Tests
         env:
-          TAGS: ${{ github.event.inputs.tags }}
-          BROWSER: ${{ github.event.inputs.browser }}
+          TAGS: ${{ github.event.inputs.tags || '@all' }}
+          BROWSER: ${{ github.event.inputs.browser || 'electron' }}
         run: |
           npx cypress run --spec "cypress/e2e/**/*.cy.js" --browser $BROWSER  --env TAGS=$TAGS
 
