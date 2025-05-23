@@ -63,7 +63,7 @@ jobs:
           TAGS: ${{ github.event.inputs.tags || '@all' }}
           BROWSER: ${{ github.event.inputs.browser || 'electron' }}
         run: |
-          npx cypress run --spec "cypress/e2e/**/*.cy.js" --browser $BROWSER  --env TAGS=$TAGS
+          npx cypress run --spec "**/*.feature" --browser $BROWSER  --env TAGS=$TAGS
 
       - name: 📂 Verificar Relatórios do Cypress
         run: ls -la output/reports
