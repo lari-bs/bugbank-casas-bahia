@@ -1,0 +1,11 @@
+{
+  "validEmail": "user@test.com",
+  "invalidEmail": "user",
+  "validPassword": "123",
+  "invalidPassword": "321",
+  "validName": "User Test",
+  "senderEmail": "larissa@test.com",
+  "senderName": "Larissa",
+  "receiverEmail": "barbosa@test.com",
+  "receiverName": "Barbosa"
+}

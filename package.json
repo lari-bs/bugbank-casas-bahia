@@ -1,0 +1,20 @@
+{
+  "name": "bugbank-casas-bahia",
+  "version": "1.0.0",
+  "description": "Avaliar a habilidade em configurar um ambiente de testes, utilizar Git e aplicar conhecimentos básicos de Cypress e Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run --quiet --headless --browser=electron"
+  },
+  "keywords": [],
+  "author": "Larissa Barbosa",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.4.0"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "dayjs": "^1.11.13"
+  }
+}

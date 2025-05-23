@@ -1,0 +1,11 @@
+{
+  "mandatoryAlert": "É campo obrigatório",
+  "invalidFormatAlert": "Formato inválido",
+  "userAlert": "Usuário ou senha inválido.\nTente novamente ou verifique suas informações!",
+  "nameAlert": "Nome não pode ser vazio.",
+  "passwordAlert": "As senhas não são iguais.",
+  "developmentAlert": "Funcionalidade em desenvolvimento",
+  "accountCreatedAlert": "foi criada com sucesso",
+  "transferAlert": "Transferencia realizada com sucesso",
+  "invalidAccountAlert": "Conta inválida ou inexistente"
+}
