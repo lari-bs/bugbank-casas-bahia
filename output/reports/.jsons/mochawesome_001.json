@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 3,
+    "failures": -2,
+    "start": "2025-05-23T14:28:15.487Z",
+    "end": "2025-05-23T14:28:15.545Z",
+    "duration": 58,
+    "testsRegistered": 3,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "96cb82a2-056b-4712-9d09-00304bbb4609",
+      "title": "",
+      "fullFile": "cypress\\e2e\\transfer.feature",
+      "file": "cypress\\e2e\\transfer.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9516b12b-2e48-4588-9053-5676d1d43eed",
+          "title": "Transferência",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar transferência de valor entre contas com sucesso",
+              "fullTitle": "Transferência Deve realizar transferência de valor entre contas com sucesso",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "f4eaca2d-177c-4303-ae62-1b677802953f",
+              "parentUUID": "9516b12b-2e48-4588-9053-5676d1d43eed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Não deve realizar transferência para uma conta inexistente",
+              "fullTitle": "Transferência Não deve realizar transferência para uma conta inexistente",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0899f39d-d3e3-4d8c-b196-196ee0ae3ad7",
+              "parentUUID": "9516b12b-2e48-4588-9053-5676d1d43eed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve realizar transferência de valor entre contas com sucesso e saldos atualizados",
+              "fullTitle": "Transferência Deve realizar transferência de valor entre contas com sucesso e saldos atualizados",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "4afd14fe-7cbd-42b9-be1c-a4fd2c4b698e",
+              "parentUUID": "9516b12b-2e48-4588-9053-5676d1d43eed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "f4eaca2d-177c-4303-ae62-1b677802953f",
+            "0899f39d-d3e3-4d8c-b196-196ee0ae3ad7",
+            "4afd14fe-7cbd-42b9-be1c-a4fd2c4b698e"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "output\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "charts": true,
+        "quiet": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

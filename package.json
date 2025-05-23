@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run --quiet --headless --browser=electron"
+    "cypress:run": "npx cypress run --quiet --headless --browser=electron",
+    "cypress:tags": "npx cypress run --quiet --headless --browser=electron -e TAGS=@all"
   },
   "keywords": [],
   "author": "Larissa Barbosa",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.4.0"
+    "cypress": "^12.13.0"
   },
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress-mochawesome-reporter": "^3.8.2",
     "dayjs": "^1.11.13"
   }

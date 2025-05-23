@@ -79,17 +79,19 @@ class RegisterPage {
         this.elements.closeModalButton().should('be.visible').click();
     }
 
-    createAccount(email, name, password, passwordConfirmation, balanceToggle = true, aliasName = 'accountNumber') {
+    createAccount(email, name, password, passwordConfirmation, balanceToggle = true) {
         this.typeEmail(email);
         this.typeName(name);
         this.typePassword(password);
         this.typePasswordConfirmation(passwordConfirmation);
         if (balanceToggle) this.clickAddBalanceButton();
         this.clickRegisterButton();
+    }
+
+    confirmAccountRegistration(aliasName = 'accountNumber') {
         this.validateAlert(this.elements.accountAlert(), texts.accountCreatedAlert);
         this.extractAccountNumber(aliasName)
     }
-
 }
 
 export const registerPage = new RegisterPage();
