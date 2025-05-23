@@ -24,10 +24,10 @@ on:
         required: false
         default: '@all'
         options:
-          - @all
-          - @login
-          - @transfer
-          - @withdraw
+          - '@all'
+          - '@login'
+          - '@transfer'
+          - '@withdraw'
 
 jobs:
   cypress-run:
