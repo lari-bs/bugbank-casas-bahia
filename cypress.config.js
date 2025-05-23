@@ -18,7 +18,7 @@ module.exports = defineConfig({
       config.screenshotsFolder = `output/screenshots/${timestamp}`
       config.reporterOptions = {
         reportDir: `output/reports`,
-        overwrite: false,
+        overwrite: true,
         html: true,
         json: true,
         embeddedScreenshots: true,

@@ -65,9 +65,12 @@ jobs:
         run: |
           npx cypress run --spec "cypress/e2e/**/*.cy.js" --browser $BROWSER  --env TAGS=$TAGS
 
+      - name: 📂 Verificar Relatórios do Cypress
+        run: ls -la output/reports
+
       - name: 📤 Deploy Test Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output/reports
+          publish_dir: output/reports
           publish_branch: gh-pages
