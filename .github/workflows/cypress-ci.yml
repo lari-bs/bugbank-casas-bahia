@@ -9,15 +9,30 @@ on:
   pull_request:
     branches:
       - '**'
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Escolha o navegador'
+        required: true
+        default: 'electron'
+        options:
+          - electron
+          - chrome
+          - firefox
+      tags:
+        description: 'Escolha as tags para os testes Cypress'
+        required: false
+        default: '@all'
+        options:
+          - @all
+          - @login
+          - @transfer
+          - @withdraw
 
 jobs:
   cypress-run:
     name: 🧪 Executar Testes Cypress
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        browser: [electron]
 
     steps:
       - name: 📥 Check out the test project repository
@@ -54,9 +69,10 @@ jobs:
 
       - name: 🧪 Run Cypress Tests
         env:
-          TAGS: '@all'
+          TAGS: ${{ github.event.inputs.tags }}
+          BROWSER: ${{ github.event.inputs.browser }}
         run: |
-          npx cypress run --spec "cypress/e2e/**/*.cy.js" --browser ${{ matrix.browser }} --env TAGS=$TAGS
+          npx cypress run --spec "cypress/e2e/**/*.cy.js" --browser $BROWSER  --env TAGS=$TAGS
 
       - name: 📤 Deploy Test Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
