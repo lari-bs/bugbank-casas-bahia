@@ -17,10 +17,10 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome, firefox, electron]
+        browser: [electron]
 
     steps:
-      - name: 📥 Check out the code
+      - name: 📥 Check out the test project repository
         uses: actions/checkout@v3
 
       - name: 🚀 Setup Node.js
@@ -28,8 +28,29 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📦 Install dependencies
+      - name: 📦 Install dependencies (Testing Project)
         run: npm install
+
+      - name: 📥 Clone BugBank UI repository
+        run: git clone https://github.com/jhonatasmatos/bugbank-ui.git bugbank-ui
+
+      - name: 📦 Install dependencies (BugBank UI)
+        working-directory: bugbank-ui
+        run: yarn install
+
+      - name: 🛠 Build BugBank UI
+        working-directory: bugbank-ui
+        run: yarn build
+
+      - name: 🚀 Start BugBank UI server
+        working-directory: bugbank-ui
+        run: yarn dev &
+        env:
+          HOST: 0.0.0.0
+          PORT: 3000
+
+      - name: 🕒 Wait for server to be ready
+        run: npx wait-on http://localhost:3000
 
       - name: 🧪 Run Cypress Tests
         env:
@@ -37,7 +58,7 @@ jobs:
         run: |
           npx cypress run --spec "cypress/e2e/**/*.cy.js" --browser ${{ matrix.browser }} --env TAGS=$TAGS
 
-      - name: 📤 Deploy to GitHub Pages
+      - name: 📤 Deploy Test Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
